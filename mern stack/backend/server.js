@@ -1,12 +1,12 @@
+
+require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const workoutRoutes = require('./routes/workouts.js');
 
 // express app
-require('dotenv').config()
 
 const app = express();
-const PORT =  4000;
 
 // building a middleware
 app.use(express.json());
