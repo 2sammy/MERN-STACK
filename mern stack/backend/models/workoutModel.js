@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
  //creating the schema
 const Schema = mongoose.Schema
 //what our data should look like
+//we are using it as afunction
+
 const workoutSchema = new Schema({
     title: {
         type: String,
@@ -16,7 +18,7 @@ const workoutSchema = new Schema({
 
     load: {
         type: Number,
-        require:true
+        require: true
     }
 },
 
