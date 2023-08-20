@@ -11,4 +11,4 @@ export const useWorkoutContext = () => {
     return context
 }
 
-export default useWorkoutContext
+export default useWorkoutContext;

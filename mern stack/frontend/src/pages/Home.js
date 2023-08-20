@@ -6,7 +6,7 @@ import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 
 const Home = () => {
-  const {workouts, dispatch} = useWorkoutContext9()
+  const {workouts, dispatch} = useWorkoutContext()
 
   useEffect(() => {
     const fetchWorkouts = async () => {

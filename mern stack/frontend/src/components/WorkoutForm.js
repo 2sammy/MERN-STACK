@@ -1,9 +1,9 @@
 import { useState } from "react"
-import { Form } from "react-router-dom"
 import { useWorkoutContext } from "../hooks/useWorkoutsContext"
 
 const WorkoutForm = () => {
     const {dispatch } = useWorkoutContext()
+    
     const [title, setTitle] = useState('')
     const [load, setLoad] = useState('')
     const [reps, setReps] = useState('')
