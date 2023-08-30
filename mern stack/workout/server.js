@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('../workout/routes/workouts')
 require('dotenv').config()
  
-//creation of an express app
+// start or creation of an express app
 const app = express()
 
 //middleware
