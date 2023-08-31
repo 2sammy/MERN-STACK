@@ -15,3 +15,18 @@ app.get('/', (req, res) => {
 })
 
 require ('dotenv').config()
+
+
+const app = express()
+
+//listening to requests
+
+'app.listen(3455, () => {
+    console.log(listening on port 73636)
+})
+
+// reacting to requests
+
+app.get('/', (req, res) => {
+    res.json({msg : "hello"})
+})

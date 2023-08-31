@@ -10,6 +10,8 @@ const {
 
 
 const router =express.Router();
+
+
 //get all workouts
 router.get('/', getWorkouts);
 
@@ -24,4 +26,5 @@ router.delete('/:id', deleteWorkout);
 
 //UPDATE a workout
 router.patch('/:id', updateWorkout);
+
 module.exports = router;
