@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // get all workouts
 const getWorkouts = async (req, res) => {
 
-    // get all the workouts in the collection we us find function
+    // get all the workouts in the collection or array
 
     const workouts = await Workout.find({}).sort({createdAt: -1})
     res.status(200).json(workouts)
@@ -14,7 +14,6 @@ const getWorkouts = async (req, res) => {
 // get single workout
 const getWorkout = async (req, res) => {
     const {id} = req.params
-
     if(!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(404).json({error : "No such workout"});
     }
@@ -30,22 +29,20 @@ const getWorkout = async (req, res) => {
 
 // create new workout
 
-const createWorkout = async (req,res) => {
+const createWorkout = async (req, res) => {
     const{title , load, reps} = req.body
 
-    //add doc to db
+    //add document  to db
     try {
         const workout = await Workout.create({title, load, reps})
         res.status(200).json(workout)
-
-
     } catch(error) {
         res.status(400).json({error: error.message})
-
-    }
+ }
 }
 
 // delete a workout
+
 const deleteWorkout = async (req,res) => {
     const {id} =req.params
 
