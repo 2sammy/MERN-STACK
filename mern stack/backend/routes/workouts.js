@@ -20,6 +20,7 @@ router.get('/:id', getWorkout);
 
 //POST new workouts
 router.post('/', createWorkout);
+/**const{title,load,reps} = req.body */
 
 // delete single work out
 router.delete('/:id', deleteWorkout);

@@ -1,27 +1,29 @@
 const mongoose = require('mongoose');
-
+// const mongooose = require('mongoose');
  //creating the schema
 const Schema = mongoose.Schema
 //what our data should look like
 //we are using it as afunction
+//const Schema = mongoose.Schema
 
 const workoutSchema = new Schema({
     title: {
         type : String,
-        require : true
+        required : true
     },
     reps : {
-        type: String,
-        require : true
+        type: Number,
+        required : true
     },
     load : {
-        type : String,
-        require : true
+        type : Number,
+        required : true
 
     }
     
 }, {
-    timeseries: true
-})
+    timestamps: true
+}
+)
 
-module.exports = mongoose.model('Workout',workoutSchema)
+module.exports = mongoose.model('Workout', workoutSchema)

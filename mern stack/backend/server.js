@@ -31,3 +31,15 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
+/**
+ * mongoose.connect(process.env.MONGO_URI)
+ * .then(() => {
+ * app.listen(process.env.PORT, () => {
+ * console.log(`cone.....` , process.env.MONGO_URI)
+ * } )
+ * 
+ * })
+ * catch((error) => {
+ * console.log()
+ * })
+ */

@@ -7,7 +7,7 @@ const getWorkouts = async (req, res) => {
     // get all the workouts in the collection or array
 
     const workouts = await Workout.find({}).sort({createdAt: -1})
-    res.status(200).json(workouts)
+     res.status(200).json(workouts)
 }
 
 
@@ -24,22 +24,29 @@ const getWorkout = async (req, res) => {
     }
     res.status(200).json(workout)
 }
-
-
-
 // create new workout
 
 const createWorkout = async (req, res) => {
     const{title , load, reps} = req.body
 
-    //add document  to db
+    //add document  to database
+
     try {
         const workout = await Workout.create({title, load, reps})
-        res.status(200).json(workout)
+        res.status(200).json(workout)// sending status code
     } catch(error) {
-        res.status(400).json({error: error.message})
+        res.status(400).json({error: error.message}) // checking error
+
  }
 }
+
+/**
+ * const {title,load,reps} = req.body
+ * 
+ * try{
+ * const workout = await Workout.create({title,load,reps})
+ * }
+ */
 
 // delete a workout
 
