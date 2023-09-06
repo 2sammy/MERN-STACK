@@ -9,9 +9,10 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts')
-      const json = await response.json()
+      const response = await fetch('/api/workouts/')
+      const json = await response.json() // now we can have arrays of workouts here.
 
+      // checking if the response is okay
       if (response.ok) {
         dispatch({type: 'SET_WORKOUTS', payload: json})
       }
@@ -33,3 +34,5 @@ const Home = () => {
 }
 
 export default Home
+
+//useEffect hook fires afunction that needs to be rendered

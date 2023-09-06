@@ -13,8 +13,7 @@ const WorkoutForm = () => {
     e.preventDefault()
 
     const workout = {title, load, reps}
-    
-    const response = await fetch('/api/workouts', {
+     const response = await fetch('/api/workouts', {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {
@@ -39,8 +38,8 @@ const WorkoutForm = () => {
   return (
     <form className="create" onSubmit={handleSubmit}> 
       <h3>Add a New Workout</h3>
-
       <label>Excersize Title:</label>
+
       <input 
         type="text" 
         onChange={(e) => setTitle(e.target.value)} 
@@ -61,7 +60,7 @@ const WorkoutForm = () => {
         value={reps} 
       />
 
-      <button>Add Workout</button>
+      <button>Add a New Workout</button>
       {error && <div className="error">{error}</div>}
     </form>
   )
