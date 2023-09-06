@@ -1,5 +1,6 @@
+// createcontext let us make a new context that we can provide to our app
 import { createContext, useReducer } from 'react'
-
+//this let us create a new context
 export const WorkoutsContext = createContext()
 
 export const workoutsReducer = (state, action) => {
@@ -20,7 +21,6 @@ export const workoutsReducer = (state, action) => {
       return state
   }
 }
-
 export const WorkoutsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(workoutsReducer, { 
     workouts: null
