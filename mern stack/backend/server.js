@@ -19,6 +19,7 @@ app.use((req, res, next) => {
     next();
 })
 // react to the request by creating routes
+//registering the routes
 app.use('/api/workouts', workoutRoutes);
 app.use('/api/user', userRoutes);
 
