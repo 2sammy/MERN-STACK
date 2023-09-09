@@ -14,8 +14,6 @@ const userSchema = new Schema({
         required: true
     }
 })
-
-
 //static signup method
 userSchema.statics.signup = async function (email, password){
     const exists = await this.findOne({ email})
