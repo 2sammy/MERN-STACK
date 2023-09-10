@@ -2,6 +2,8 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 //pages and components
 import Home from './pages/Home';
+import Login from './pages/Login'
+import Signup from './pages/signup';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -17,6 +19,14 @@ function App() {
           path="/"
           element= {<Home />}
         />
+        <Route
+          path="/login"
+          element= {<Login />}
+        />
+        <Route
+          path="/signup"
+          element= {<Signup/>}
+        />
         </Routes>
 
       </div>
@@ -30,25 +40,3 @@ function App() {
 
 
 export default App;
-  /**
-   * import {BrowserRouter, Routes, Route} from 'react-router-dom'
-   * .import Home from './pages/Home'
-   * 
-   * function App(){
-   * return(
-   * <div className="App">
-   * <BrowserRouter> 
-   * <div className=" pages">
-   * <Routes>
-   * <Route path='/'
-   * element={<Home />}
-   * />
-   * </Routes>
-   * </div>
-   * 
-   * )
-   * }
-   * 
-   * 
-   * 
-   */
