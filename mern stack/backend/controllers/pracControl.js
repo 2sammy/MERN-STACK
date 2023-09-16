@@ -1,4 +1,4 @@
-const User = require('../models/pracModel')
+const User = require('../models/')
 
 //login user
 const loginUser = async() =>{
@@ -7,6 +7,15 @@ const loginUser = async() =>{
 
 //signup luser
 const signupUser = async() =>{
-    resizeBy.json({mess: "signup user"})
+
+    const {email, password} = req.body
+
+    try{
+        const user = await User.signup(email, password)
+        res.status(200).json({email, user})
+    } catch(error){
+        res.status(400).json({error: error.message})
+
+    }
 }
 module.exports = {loginUser, signupUser}
