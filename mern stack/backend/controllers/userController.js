@@ -12,6 +12,7 @@ const loginUser = async (req, res) => {
 
     try{
         const user = await User.login(email,password)
+        
         //creating tokens
         const token = createToken(user._id)
 

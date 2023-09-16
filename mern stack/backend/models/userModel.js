@@ -1,8 +1,9 @@
-const bcrypt = require('bcrypt')
-const mongoose = require('mongoose')
+const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
 const validator = require('validator')
 const Schema = mongoose.Schema
 
+//creating user schema
 const userSchema = new Schema({
     email: {
         type: String,
@@ -16,6 +17,7 @@ const userSchema = new Schema({
 })
 //static signup method
 userSchema.statics.signup = async function (email, password){
+    //checking if the email already exists in the database
     const exists = await this.findOne({ email})
 
     //validation
@@ -34,7 +36,7 @@ userSchema.statics.signup = async function (email, password){
     if(exists){
         throw Error('Email already in use')
     }
-
+// we are using await because it takes time to design
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password, salt)
 
