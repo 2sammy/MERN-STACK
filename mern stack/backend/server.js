@@ -7,7 +7,6 @@ const workoutRoutes = require('./routes/workouts');
 const userRoutes = require('./routes/user');
 
 // express app
-
 const app = express();
 
 // building a middleware
@@ -33,16 +32,3 @@ mongoose.connect(process.env.MONGO_URI)
     .catch((error) => {
         console.log(error)
     })
-
-/**
- * mongoose.connect(process.env.MONGO_URI)
- * .then(() => {
- * app.listen(process.env.PORT, () => {
- * console.log(`cone.....` , process.env.MONGO_URI)
- * } )
- * 
- * })
- * catch((error) => {
- * console.log()
- * })
- */
