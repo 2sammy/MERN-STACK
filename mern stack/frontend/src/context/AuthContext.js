@@ -1,4 +1,4 @@
-//creating and managing the context
+//creating and managing the context from react
 import { createContext, useReducer } from 'react'
 
 export const AuthContext = createContext()
@@ -9,11 +9,14 @@ export const authReducer = (state, action) => {
         case 'LOGOUT':
             return{ user: null}
             default:
-            return state
+                return state
     }
 }
 
+//component created
+// children represents whenever what is wrapped
 export const AuthContextProvider =({children}) => {
+    //registering the state
     const [state, dispatch] = useReducer(authReducer, {
         user: null
     })
