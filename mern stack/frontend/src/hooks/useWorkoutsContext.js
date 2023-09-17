@@ -10,3 +10,4 @@ export const useWorkoutsContext = () => {
 
   return context
 }
+export default useWorkoutsContext
